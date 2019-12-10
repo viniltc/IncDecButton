@@ -39,6 +39,7 @@ void ButtonInc::buttonReleased_high()
 {
 timer_high->stop();
 }
+
 void ButtonInc::buttonPressed_low()
 {
 timerTimeout = 5000;
@@ -58,7 +59,9 @@ if(timerTimeout > 50)
 timerTimeout = timerTimeout / 2;
 timer_high->start(timerTimeout);
 }
+
 void ButtonInc::doDecrement()
+
 {
 number--;
 ui->label->setText(QString("Value: %1").arg(number));

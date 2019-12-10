@@ -19,12 +19,12 @@ public:
 protected slots:
 void buttonPressed_high();
 void buttonReleased_high();
-void buttonPressed_veryHigh();
-void buttonReleased_veryHigh();
+void buttonPressed_moreHigh();
+void buttonReleased_moreHigh();
 void buttonPressed_low();
 void buttonReleased_low();
-void buttonPressed_veryLow();
-void buttonReleased_veryLow();
+void buttonPressed_moreLow();
+void buttonReleased_moreLow();
 void doIncrement();
 void doDecrement();
 void doMoreIncrement();

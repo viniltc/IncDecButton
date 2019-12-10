@@ -23,13 +23,15 @@ ButtonInc::ButtonInc(QWidget *parent)
 
     connect(ui->pushButton_high, &QPushButton::pressed, this, &ButtonInc::buttonPressed_high);
     connect(ui->pushButton_high,  &QPushButton::released, this, &ButtonInc::buttonReleased_high);
-    connect(ui->pushButton_veryHigh, &QPushButton::pressed, this, &ButtonInc::buttonPressed_veryHigh);
-    connect(ui->pushButton_veryHigh,  &QPushButton::released, this, &ButtonInc::buttonReleased_veryHigh);
+
+    connect(ui->pushButton_moreHigh, &QPushButton::pressed, this, &ButtonInc::buttonPressed_moreHigh);
+    connect(ui->pushButton_moreHigh,  &QPushButton::released, this, &ButtonInc::buttonReleased_moreHigh);
 
     connect(ui->pushButton_low, &QPushButton::pressed, this, &ButtonInc::buttonPressed_low);
     connect(ui->pushButton_low, &QPushButton::released, this, &ButtonInc::buttonReleased_low);
-    connect(ui->pushButton_veryLow, &QPushButton::pressed, this, &ButtonInc::buttonPressed_veryLow);
-    connect(ui->pushButton_veryLow, &QPushButton::released, this, &ButtonInc::buttonReleased_veryLow);
+
+    connect(ui->pushButton_moreLow, &QPushButton::pressed, this, &ButtonInc::buttonPressed_moreLow);
+    connect(ui->pushButton_moreLow, &QPushButton::released, this, &ButtonInc::buttonReleased_moreLow);
 
 
 
@@ -51,13 +53,13 @@ void ButtonInc::buttonReleased_high()
 timer_high->stop();
 }
 
-void ButtonInc::buttonPressed_veryHigh()
+void ButtonInc::buttonPressed_moreHigh()
 {
 timerTimeout = 5000;
 doMoreIncrement();
 }
 
-void ButtonInc::buttonReleased_veryHigh()
+void ButtonInc::buttonReleased_moreHigh()
 {
 timer_high->stop();
 }
@@ -72,13 +74,13 @@ void ButtonInc::buttonReleased_low()
 {
 timer_low->stop();
 }
-void ButtonInc::buttonPressed_veryLow()
+void ButtonInc::buttonPressed_moreLow()
 {
 timerTimeout = 5000;
 doMoreDecrement();
 }
 
-void ButtonInc::buttonReleased_veryLow()
+void ButtonInc::buttonReleased_moreLow()
 {
 timer_low->stop();
 }

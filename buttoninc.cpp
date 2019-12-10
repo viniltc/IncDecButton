@@ -7,20 +7,22 @@ ButtonInc::ButtonInc(QWidget *parent)
     , ui(new Ui::ButtonInc)
 {
     ui->setupUi(this);
+
     number = 0;
     timerTimeout = 0;
     timer_high = new QTimer(this);
     timer_low = new QTimer(this);
 
-    connect(timer_high, SIGNAL(timeout()), this, SLOT(doIncrement()));
-    connect(timer_low, SIGNAL(timeout()), this, SLOT(doDecrement()));
 
-    connect(ui->pushButton_high, SIGNAL(pressed()), this, SLOT(buttonPressed_high()));
-    connect(ui->pushButton_high, SIGNAL(released()), this, SLOT(buttonReleased_high()));
+    connect(timer_high, &QTimer::timeout, this, &ButtonInc::doIncrement);
+    connect(timer_low, &QTimer::timeout, this, &ButtonInc::doDecrement);
 
-    connect(ui->pushButton_low, SIGNAL(pressed()), this, SLOT(buttonPressed_low()));
-    connect(ui->pushButton_low, SIGNAL(released()), this, SLOT(buttonReleased_low()));
-    //test git
+    connect(ui->pushButton_high, &QPushButton::pressed, this, &ButtonInc::buttonPressed_high);
+    connect(ui->pushButton_high,  &QPushButton::released, this, &ButtonInc::buttonReleased_high);
+
+    connect(ui->pushButton_low, &QPushButton::pressed, this, &ButtonInc::buttonPressed_low);
+    connect(ui->pushButton_low, &QPushButton::released, this, &ButtonInc::buttonReleased_low);
+
 
 }
 

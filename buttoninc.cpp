@@ -20,6 +20,7 @@ ButtonInc::ButtonInc(QWidget *parent)
 
     connect(ui->pushButton_low, SIGNAL(pressed()), this, SLOT(buttonPressed_low()));
     connect(ui->pushButton_low, SIGNAL(released()), this, SLOT(buttonReleased_low()));
+    //test git
 
 }
 
